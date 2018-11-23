@@ -1,1 +1,15 @@
+{% if product.available %}
+    Этот товар отсутствует
+{% else %}
+    Извините, этот товар распродан
+{% endif %}
 
+{% if cart.item_count > 0 %}
+    <p>Товаров в вашей корзине: {{ cart.item_count }}</p>
+{% else %}
+    <p>Ваша корзина пуста. Почему бы вам не ознакомиться с  <a href="/products">ассортиментом </a></p>
+{% endif %}
+
+{% for image in product.images %}
+    <img src="{{ image | product_img_url: 'small' }}">
+{% endfor %}

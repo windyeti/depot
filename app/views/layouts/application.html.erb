@@ -9,7 +9,7 @@
 <body class='<%= controller.controller_name %>'>
   <div id="banner">
     <%= image_tag("logo.png") %>
-    <%= @page_title || "Pragqmatic bookshelf" %>
+    <%= @page_title || "Pragmatic bookshelf" %>
   </div>
   <div id="columns">
     <div id="side">
@@ -19,6 +19,9 @@
         <li><a href="http://www..../news">News</a></li>
         <li><a href="http://www..../contact">Contact</a></li>
       </ul>
+      <div class="time">
+        Документ открыт: <br> <%= @day %> : <%= @month %> : <%= @year %>
+      </div>
     </div>
     <div id="main">
       <%= yield %>
